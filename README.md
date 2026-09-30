@@ -1,16 +1,6 @@
 # Does the task prefix actually do anything?
 
-Tiparthi Koushik Reddy (1863216), Universität Trier — NLP seminar.
 
-A controlled ablation of one design decision in **T5** (Raffel et al., 2020,
-*Exploring the Limits of Transfer Learning with a Unified Text-to-Text
-Transformer*): the task prefix prepended to every input.
-
-```
-cola sentence: The boy smiled.        ->  acceptable
-sst2 sentence: a masterful film .     ->  positive
-mrpc sentence1: ... sentence2: ...    ->  equivalent
-```
 
 T5's premise is that one model, one loss and one decoding procedure can serve
 every task, and the prefix is what tells the model which task it is looking at.
@@ -63,14 +53,6 @@ another task's prefix, an empty prefix, or a nonsense token change anything?
 **RQ2** In multi-task fine-tuning, where one model serves three tasks at once,
 does the prefix become load-bearing?
 
-**RQ3** If the prefix matters less than T5's design implies, *why*? How much
-task identity leaks through the **label space** instead?
-
-RQ3 is the part that is not a re-run. T5's verbalizers are disjoint —
-`acceptable/unacceptable`, `positive/negative`, `equivalent/not_equivalent` — so
-a multi-task model can infer the task from the output side without reading the
-prefix. Any measurement that leaves this channel open is measuring the prefix
-and the verbalizer together.
 
 ---
 
@@ -261,8 +243,7 @@ difference is not the model — it is the scoring.
 
 ```
 t5-prefix-study/
-├── README.md                    this file
-├── SUBMISSION.md                poster submission requirements and checklist
+├── README.md                    this file             
 ├── requirements.txt
 ├── .gitignore                   excludes t5_assets/, .venv/, caches
 │
@@ -286,10 +267,6 @@ t5-prefix-study/
 ├── tests/
 │   ├── test_rendering.py        input construction, metrics, grid shape
 │   └── test_pipeline_wiring.py  train/decode loop on a toy T5, no checkpoint
-│
-├── appendix/
-│   └── references.md            the reference list in plain text; the typeset
-│                                version is poster/appendix_references.pdf
 │
 ├── t5_assets/                   (gitignored) checkpoint + GLUE CSVs
 │   ├── t5-small/
@@ -315,13 +292,8 @@ t5-prefix-study/
 │   ├── misroute.png             share of answers to a different question
 │   └── poster/                  column-width variants, larger type
 │
-└── poster/
-    ├── poster.html              A1 portrait source (594 x 841 mm)
-    ├── 1863216_poster.pdf       rendered poster
-    ├── appendix.html            reference list source
-    ├── appendix_references.pdf  rendered appendix
-    ├── copy.md                  poster copy in plain text
-    └── finalise_submission.py   merges the signed declaration, builds the ZIP
+|---make_figures.py              
+└── 
 ```
 
 `results/runs.jsonl` is the source of truth. Every table, figure and number on
@@ -407,9 +379,3 @@ example, and two identical runs produce identical loss.
   robustness under distribution shift and calibration are untouched here.
 
 ---
-
-## References
-
-Full list in `appendix/references.md` and in `poster/appendix_references.pdf`.
-The primary source is Raffel, C. et al. (2020), *Exploring the Limits of
-Transfer Learning with a Unified Text-to-Text Transformer*, JMLR 21(140), 1–67.
