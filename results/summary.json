@@ -1,0 +1,126 @@
+{
+  "n_seeds": 1,
+  "majority": {
+    "cola": 0.6795,
+    "sst2": 0.5058,
+    "mrpc": 0.686
+  },
+  "single": {
+    "cola": {
+      "correct": 0.2402,
+      "wrong": 0.0,
+      "empty": 0.2283,
+      "nonsense": 0.1799
+    },
+    "sst2": {
+      "correct": 0.8875,
+      "wrong": 0.87,
+      "empty": 0.8825,
+      "nonsense": 0.8775
+    },
+    "mrpc": {
+      "correct": 0.76,
+      "wrong": 0.79,
+      "empty": 0.8025,
+      "nonsense": 0.745
+    }
+  },
+  "multi_distinct": {
+    "cola": {
+      "correct": 0.1051,
+      "wrong": 0.1051,
+      "empty": 0.0,
+      "nonsense": 0.0717
+    },
+    "sst2": {
+      "correct": 0.88,
+      "wrong": 0.8925,
+      "empty": 0.8925,
+      "nonsense": 0.8875
+    },
+    "mrpc": {
+      "correct": 0.78,
+      "wrong": 0.7775,
+      "empty": 0.8,
+      "nonsense": 0.7825
+    }
+  },
+  "multi_collided": {
+    "cola": {
+      "correct": 0.093,
+      "empty": 0.1048
+    },
+    "sst2": {
+      "correct": 0.86,
+      "empty": 0.84
+    },
+    "mrpc": {
+      "correct": 0.73,
+      "empty": 0.745
+    }
+  },
+  "swap_distinct": {
+    "cola": {
+      "cola": 0.6925,
+      "sst2": 0.0,
+      "mrpc": 0.0,
+      "(none)": 0.0075,
+      "zorbex": 0.0025
+    },
+    "sst2": {
+      "cola": 0.0,
+      "sst2": 0.88,
+      "mrpc": 0.11,
+      "(none)": 0.865,
+      "zorbex": 0.735
+    },
+    "mrpc": {
+      "cola": 0.0,
+      "sst2": 0.675,
+      "mrpc": 0.78,
+      "(none)": 0.7925,
+      "zorbex": 0.785
+    }
+  },
+  "swap_collided": {
+    "cola": {
+      "cola": 0.6775,
+      "sst2": 0.465,
+      "mrpc": 0.4825,
+      "(none)": 0.575,
+      "zorbex": 0.5575
+    },
+    "sst2": {
+      "cola": 0.5425,
+      "sst2": 0.86,
+      "mrpc": 0.8425,
+      "(none)": 0.82,
+      "zorbex": 0.815
+    },
+    "mrpc": {
+      "cola": 0.7,
+      "sst2": 0.68,
+      "mrpc": 0.73,
+      "(none)": 0.72,
+      "zorbex": 0.7225
+    }
+  },
+  "train": {
+    "per_task": 3000,
+    "epochs": 2,
+    "batch": 32,
+    "lr": 0.001,
+    "eval_n": 400,
+    "model": "t5-small",
+    "params_m": 60.5
+  },
+  "derived": {
+    "single_max_abs_delta_sst2_mrpc": 0.0425,
+    "multi_max_abs_delta_sst2_mrpc": 0.02,
+    "swap_offdiag_min_distinct": 0.0,
+    "swap_offdiag_min_collided": 0.465,
+    "cola_collided_delta": 0.0118,
+    "sst2_collided_delta": -0.02,
+    "mrpc_collided_delta": 0.015
+  }
+}

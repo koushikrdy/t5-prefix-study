@@ -1,0 +1,13 @@
+task,condition,accuracy_mean,accuracy_sd,primary_mean,primary_sd,off_mean,misroute_mean,n_seeds
+cola,correct,0.71,,0.2402,,0.0,0.0,1
+cola,wrong,0.675,,0.0,,0.0,0.0,1
+cola,empty,0.7025,,0.2283,,0.0,0.0,1
+cola,nonsense,0.705,,0.1799,,0.0,0.0,1
+sst2,correct,0.8875,,0.8875,,0.0,0.0,1
+sst2,wrong,0.87,,0.87,,0.0,0.0,1
+sst2,empty,0.8825,,0.8825,,0.0,0.0,1
+sst2,nonsense,0.8775,,0.8775,,0.0,0.0,1
+mrpc,correct,0.76,,0.76,,0.0,0.0,1
+mrpc,wrong,0.79,,0.79,,0.0,0.0,1
+mrpc,empty,0.8025,,0.8025,,0.0,0.0,1
+mrpc,nonsense,0.745,,0.745,,0.0,0.0,1
